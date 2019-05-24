@@ -1,12 +1,14 @@
 applications:
-- name: tracker-registration-vinayregistration
+- name: tracker-registration-vinay
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
-  - route: registration-pal-vinay.apps.dev.pcf-aws.com
+  - route: registration-pal-basa.apps.dev.pcf-aws.com
   memory: 1G
   instances: 1
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+    GRANT_TYPE: client_credentials
   services:
   - tracker-registration-database
   - tracker-service-registry
+  - tracker-sso
